@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Healthcare Technology Company | Advancing Healthcare Through Intelligent Digital Innovation</title>
+    <meta name="description"
+        content="Enterprise-grade software, applications, and technology solutions delivering operational excellence, data-driven insights, and enhanced patient outcomes.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2563eb",
+                        secondary: "#1e40af",
+                        accent: "#0ea5e9",
+                        dark: "#1e293b",
+                        light: "#f8fafc"
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .main-img {
+            border-radius: 1rem;
+        }
+
+        .fa-rocket {
+            color: rgb(234 179 8);
+            font-size: 5rem;
+        }
+
+        .fa-rocket {
+            color: rgb(234 179 8);
+            font-size: 5rem;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-white font-sans">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 sm:px-10 lg:px-20 py-4">
+            <div class="flex justify-between items-center">
+
+                <!-- Logo -->
+                <a href="/" class="flex items-center">
+                    <img src="./my_care_logo.svg" class="h-10 w-auto" alt="Logo">
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
+                    <a href="about.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
+                    <a href="service.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">Service</a>
+                    <a href="contact.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- CTA + Hamburger -->
+                <div class="flex items-center space-x-4">
+                    <button
+                        class="hidden md:block bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-secondary transition-colors">
+                        Request Demo
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="menuBtn" class="md:hidden text-gray-700">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden flex-col space-y-4 mt-4 md:hidden">
+                <a href="index.html" class="block text-gray-700 hover:text-primary font-medium">Home</a>
+                <a href="about.html" class="block text-gray-700 hover:text-primary font-medium">About</a>
+                <a href="service.html" class="block text-gray-700 hover:text-primary font-medium">Service</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-primary font-medium">Contact</a>
+
+                <button
+                    class="w-full bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-secondary transition-colors">
+                    Request Demo
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+
+      <section class="w-full bg-gradient-to-b from-[#e8f1ff] to-white py-4 px-6 sm:px-10 lg:px-20 py-16 lg:py-24">
+        <div class="container mx-auto px-0 sm:px-0 sm:text-center lg:px-20 flex flex-col lg:flex-row items-center justify-between gap-16">
+
+
+            <!-- LEFT CONTENT -->
+            <div class="flex-1 max-w-xl">
+
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+                    Enterprise <br />
+                    Technology <br />
+                    Solutions That
+                    <span class="text-blue-600">Drive</span> <br />
+                    <span class="text-blue-600">Real Results</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-gray-600 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+                    Get measurable improvements in efficiency, compliance, and patient outcomes through secure, scalable
+                    digital solutions—without disrupting your existing workflows.
+                </p>
+
+                <!-- Buttons -->
+                <!-- BUTTON ROW -->
+                <div class="flex gap-4 mt-8">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium shadow-md">
+                        Claim Your Free Consultation
+                    </button>
+
+                    <button
+                        class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium">
+                        Explore Our Tech Stack
+                    </button>
+                </div>
+
+                <!-- NOTE -->
+                <div class="mt-4 flex items-center gap-2 text-gray-500 text-sm">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    No credit card required • Free consultation included
+                </div>
+
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="relative flex-1 flex justify-center">
+                <img src="./service.jpg" class="main-img" alt="">
+
+                <!-- Floating Badge: USERS -->
+                <div class="absolute -top-6 right-0 bg-white shadow-lg rounded-xl px-6 py-4 flex items-center gap-3">
+                    <div class="bg-emerald-100 text-emerald-600 p-2 rounded-lg">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-xl font-bold text-gray-900">10k+</p>
+                        <p class="text-gray-500 text-sm">Users Served</p>
+                    </div>
+                </div>
+
+                <!-- Floating Badge: EFFICIENCY -->
+                <div class="absolute -bottom-6 left-0 bg-white shadow-lg rounded-xl px-6 py-4 flex items-center gap-3">
+                    <div class="bg-blue-100 text-blue-600 p-2 rounded-lg">
+                        <i class="fas fa-chart-line text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-xl font-bold text-gray-900">40%</p>
+                        <p class="text-gray-500 text-sm">Efficiency Gain</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="py-16 sm:py-20 bg-white">
+        <div class="container mx-auto px-6 sm:px-10 lg:px-20">
+
+
+            <!-- Heading -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900">
+                    Comprehensive Healthcare <span class="text-blue-600">Technology Solutions</span>
+                </h2>
+                <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">
+                    From patient management to digital transformation—we build enterprise-grade platforms
+                    tailored to your unique operational needs.
+                </p>
+            </div>
+
+            <!-- GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Card 1 -->
+                <div class="border rounded-xl p-8 shadow-sm hover:shadow-md transition bg-white">
+                    <div
+                        class="w-14 h-14 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mb-6">
+                        <i class="fas fa-hospital text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Healthcare Software Development</h3>
+                    <p class="text-gray-600 mb-4">
+                        Custom EMR systems, billing platforms, and workflow automation designed for complex healthcare
+                        operations.
+                    </p>
+                    <a href="#" class="text-blue-600 font-semibold hover:underline flex items-center gap-2">
+                        Learn More <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="border rounded-xl p-8 shadow-sm hover:shadow-md transition bg-white">
+                    <div
+                        class="w-14 h-14 rounded-lg bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Mobile Application Development</h3>
+                    <p class="text-gray-600 mb-4">
+                        Patient portals, remote monitoring, and secure communication tools for iOS & Android.
+                    </p>
+                    <a href="#" class="text-blue-600 font-semibold hover:underline flex items-center gap-2">
+                        Learn More <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="border rounded-xl p-8 shadow-sm hover:shadow-md transition bg-white">
+                    <div
+                        class="w-14 h-14 rounded-lg bg-gradient-to-br from-yellow-300 to-green-500 flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Web Development</h3>
+                    <p class="text-gray-600 mb-4">
+                        Corporate websites, patient portals, and scheduling systems optimized for performance and
+                        security.
+                    </p>
+                    <a href="#" class="text-blue-600 font-semibold hover:underline flex items-center gap-2">
+                        Learn More <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="border rounded-xl p-8 shadow-sm hover:shadow-md transition bg-white">
+                    <div
+                        class="w-14 h-14 rounded-lg bg-gradient-to-br from-purple-500 to-orange-400 flex items-center justify-center mb-6">
+                        <i class="fas fa-sync-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Digital Transformation</h3>
+                    <p class="text-gray-600 mb-4">
+                        Cloud integration, system optimization, and end-to-end digitization to modernize legacy
+                        infrastructure.
+                    </p>
+                    <a href="#" class="text-blue-600 font-semibold hover:underline flex items-center gap-2">
+                        Learn More <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="border rounded-xl p-8 shadow-sm hover:shadow-md transition bg-white">
+                    <div
+                        class="w-14 h-14 rounded-lg bg-gradient-to-br from-red-500 to-indigo-500 flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Security & Compliance</h3>
+                    <p class="text-gray-600 mb-4">
+                        HIPAA/PHIPA/GDPR compliance, advanced encryption, and comprehensive risk assessment protocols.
+                    </p>
+                    <a href="#" class="text-blue-600 font-semibold hover:underline flex items-center gap-2">
+                        Learn More <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Highlighted Card -->
+                <div
+                    class="rounded-xl p-8 shadow-md bg-gradient-to-br from-blue-500 to-blue-700 text-white flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-lg bg-white/20 flex items-center justify-center mb-6">
+                            <i class="fas fa-comments text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Not Sure Where to Start?</h3>
+                        <p class="text-blue-100 mb-6">
+                            Schedule a free consultation and let's discuss your specific healthcare technology needs.
+                        </p>
+                    </div>
+                    <a href="#"
+                        class="bg-white text-blue-700 w-fit px-5 py-3 rounded-lg font-semibold shadow flex items-center gap-2">
+                        Get Started <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-[repeating-linear-gradient(-45deg,#e9eef7_0px,#e9eef7_2px,#f3f6fb_2px,#f3f6fb_6px)]">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 px-4">
+
+            <!-- LEFT IMAGE CARD -->
+            <div class="relative bg-white p-3 rounded-2xl shadow-xl">
+                <img src="publicContain.webp" alt="Digital Transformation" class="rounded-xl w-[1000px] max-w-full" />
+
+                <!-- Uptime Floating Box -->
+                <div class="absolute -bottom-6 left-6 bg-white shadow-xl rounded-xl px-5 py-3 flex items-center gap-4">
+                    <div class="bg-green-200 p-3 rounded-lg text-xl">📈</div>
+                    <div>
+                        <h3 class="text-xl font-bold">99.9%</h3>
+                        <p class="text-gray-600 text-sm">System Uptime</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT CONTENT -->
+            <div class="w-full">
+                <!-- Tag -->
+                <div class="h-3 w-40 bg-blue-600 rounded-full mb-6"></div>
+
+                <h2 class="text-4xl font-bold leading-tight">
+                    Built on Industry-Leading <br />
+                    <span class="text-blue-600">Technology Stacks</span>
+                </h2>
+
+                <p class="text-gray-600 mt-4 mb-8 max-w-md">
+                    We leverage cutting-edge frameworks and proven enterprise technologies to deliver
+                    scalable, secure, and high-performance healthcare solutions.
+                </p>
+
+                <!-- Feature Card 1 -->
+                <div class="bg-white shadow-md rounded-xl p-5 mb-4 flex items-start gap-4">
+                    <div class="bg-blue-100 p-3 rounded-lg text-xl">💻</div>
+                    <div>
+                        <h4 class="font-semibold text-lg">Modern Development Frameworks</h4>
+                        <p class="text-gray-600 text-sm">
+                            React, Angular, Node.js for responsive and intuitive interfaces
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div class="bg-white shadow-md rounded-xl p-5 mb-4 flex items-start gap-4">
+                    <div class="bg-green-100 p-3 rounded-lg text-xl">☁️</div>
+                    <div>
+                        <h4 class="font-semibold text-lg">Cloud Infrastructure</h4>
+                        <p class="text-gray-600 text-sm">
+                            AWS, Azure, Google Cloud for reliability and scalability
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="bg-white shadow-md rounded-xl p-5 mb-4 flex items-start gap-4">
+                    <div class="bg-yellow-100 p-3 rounded-lg text-xl">🗄️</div>
+                    <div>
+                        <h4 class="font-semibold text-lg">Robust Database Solutions</h4>
+                        <p class="text-gray-600 text-sm">
+                            PostgreSQL, MongoDB, MySQL for secure data management
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <button class="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow">
+                    View Full Tech Stack →
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto text-center px-4">
+
+            <!-- Heading -->
+            <h2 class="text-4xl font-bold mb-4">
+                Tailored Solutions for Every
+                <span class="text-blue-600">Healthcare Segment</span>
+            </h2>
+
+            <p class="text-gray-600 max-w-2xl mx-auto mb-14">
+                From small clinics to large healthcare networks—we understand your unique challenges
+                and deliver solutions that drive results.
+            </p>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 text-start md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Card 1 -->
+                <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 
+                  bg-gradient-to-br from-white to-blue-50">
+                    <div class="bg-blue-600 text-white p-3 rounded-xl w-fit mb-5 text-2xl">
+                        🏥
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-4">
+                        Clinics & Medical Practices
+                    </h3>
+
+                    <ul class="text-gray-700 space-y-2 text-sm">
+                        <li class="flex items-center gap-2"><span class="text-green-500">✔</span> Integrated EMR
+                            Solutions</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✔</span> Advanced Scheduling
+                        </li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✔</span> Patient Flow
+                            Optimization</li>
+                    </ul>
+
+                    <a href="#" class="text-blue-600 mt-5 inline-block font-medium">
+                        Learn More →
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 
+                  bg-gradient-to-br from-white to-blue-50">
+                    <div class="bg-blue-500 text-white p-3 rounded-xl w-fit mb-5 text-2xl">
+                        💊
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-4">
+                        Pharmacies
+                    </h3>
+
+                    <ul class="text-gray-700 space-y-2 text-sm">
+                        <li class="flex items-center gap-2"><span class="text-green-500">✔</span> Prescription
+                            Management</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✔</span> Inventory Tracking
+                        </li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✔</span> Copay Automation</li>
+                    </ul>
+
+                    <a href="#" class="text-blue-600 mt-5 inline-block font-medium">
+                        Learn More →
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 
+                  bg-gradient-to-br from-white to-blue-50">
+                    <div class="bg-green-500 text-white p-3 rounded-xl w-fit mb-5 text-2xl">
+                        ⚗️
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-4">
+                        Pharmaceutical Organizations
+                    </h3>
+
+                    <ul class="text-gray-700 space-y-2 text-sm">
+                        <li class="flex items-center gap-2"><span class="text-green-500">✔</span> Patient Support
+                            Platforms</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✔</span> Real-Time Analytics
+                        </li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✔</span> Clinical Data
+                            Management</li>
+                    </ul>
+
+                    <a href="#" class="text-blue-600 mt-5 inline-block font-medium">
+                        Learn More →
+                    </a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 
+                  bg-gradient-to-br from-white to-blue-50">
+                    <div class="bg-yellow-400 text-white p-3 rounded-xl w-fit mb-5 text-2xl">
+                        🏗️
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-4">
+                        Healthcare Networks
+                    </h3>
+
+                    <ul class="text-gray-700 space-y-2 text-sm">
+                        <li class="flex items-center gap-2"><span class="text-green-500">✔</span> Centralized
+                            Information Systems</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✔</span> Multi-Site
+                            Coordination</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✔</span> Operational
+                            Intelligence</li>
+                    </ul>
+
+                    <a href="#" class="text-blue-600 mt-5 inline-block font-medium">
+                        Learn More →
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Footer Link -->
+            <a href="#" class="mt-12 inline-block text-blue-600 font-semibold text-lg">
+                View All Industry Solutions →
+            </a>
+
+        </div>
+    </section>
+    <section class="py-20 bg-gradient-to-br from-blue-700 to-blue-500 text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+
+            <!-- Tag -->
+            <div class="inline-block px-4 py-1 rounded-full bg-white/20 text-sm font-medium mb-6">
+                Our Proven Process
+            </div>
+
+            <!-- Heading -->
+            <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                From Concept to Deployment in
+                <span class="text-yellow-300">5 Strategic Steps</span>
+            </h2>
+
+            <!-- Subtext -->
+            <p class="text-blue-100 mt-4 max-w-2xl mx-auto">
+                Our structured methodology ensures your healthcare software is delivered on
+                time, on budget, and exceeds expectations.
+            </p>
+
+            <!-- Steps Container -->
+            <div class="mt-14 space-y-6">
+
+                <!-- Step 1 -->
+                <div class="flex items-start justify-between bg-white/10 backdrop-blur-md 
+                  rounded-xl p-6 border border-white/20">
+                    <div class="flex gap-5">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-blue-700 font-bold">
+                            1
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-lg font-semibold">Strategic Assessment & Needs Analysis</h3>
+                            <p class="text-blue-100 text-sm mt-1">
+                                Comprehensive evaluation of your operational and clinical objectives to identify
+                                opportunities and requirements.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/icons/analysis.svg" class="w-6 opacity-70" />
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex items-start justify-between bg-white/10 backdrop-blur-md 
+                  rounded-xl p-6 border border-white/20">
+                    <div class="flex gap-5">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-yellow-300 text-blue-700 font-bold">
+                            2
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-lg font-semibold">Solution Architecture & Planning</h3>
+                            <p class="text-blue-100 text-sm mt-1">
+                                Development of a customized technology roadmap aligned with your business goals and
+                                regulatory requirements.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/icons/planning.svg" class="w-6 opacity-70" />
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex items-start justify-between bg-white/10 backdrop-blur-md 
+                  rounded-xl p-6 border border-white/20">
+                    <div class="flex gap-5">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-blue-700 font-bold">
+                            3
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-lg font-semibold">Design & Development</h3>
+                            <p class="text-blue-100 text-sm mt-1">
+                                Implementation of scalable, secure, and intuitive systems using cutting-edge frameworks
+                                and best practices.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/icons/code.svg" class="w-6 opacity-70" />
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex items-start justify-between bg-white/10 backdrop-blur-md 
+                  rounded-xl p-6 border border-white/20">
+                    <div class="flex gap-5">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-yellow-300 text-blue-700 font-bold">
+                            4
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-lg font-semibold">Testing & Validation</h3>
+                            <p class="text-blue-100 text-sm mt-1">
+                                Rigorous quality assurance, compliance verification, and system validation to ensure
+                                flawless performance.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/icons/testing.svg" class="w-6 opacity-70" />
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="flex items-start justify-between bg-white/10 backdrop-blur-md 
+                  rounded-xl p-6 border border-white/20">
+                    <div class="flex gap-5">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-blue-700 font-bold">
+                            5
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-lg font-semibold">Deployment & Ongoing Support</h3>
+                            <p class="text-blue-100 text-sm mt-1">
+                                Continuous performance monitoring, support, and optimization to ensure long-term success
+                                and reliability.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/icons/support.svg" class="w-6 opacity-70" />
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Button -->
+            <button class="mt-12 bg-white text-blue-700 font-semibold px-8 py-3 rounded-lg 
+                   shadow-lg hover:bg-blue-50 transition inline-flex items-center gap-2">
+                Learn More About Our Process
+                <span>→</span>
+            </button>
+
+        </div>
+    </section>
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+
+            <!-- LEFT CONTENT -->
+            <div>
+                <!-- Orange bar -->
+                <div class="w-40 h-4 rounded-full bg-orange-500 mb-6"></div>
+
+                <!-- Heading -->
+                <h2 class="text-4xl font-bold text-gray-900 leading-snug">
+                    Start with a <span class="text-blue-600">Free Consultation</span>
+                </h2>
+
+                <!-- Subtitle -->
+                <p class="text-gray-600 mt-4 max-w-lg">
+                    Let's discuss your specific needs and explore how our healthcare software
+                    solutions can streamline your operations, enhance patient care, and ensure compliance.
+                </p>
+
+                <!-- Checklist -->
+                <div class="mt-6 space-y-5">
+
+                    <!-- Item -->
+                    <div class="flex gap-3">
+                        <div
+                            class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-lg">
+                            ✓
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Free Strategic Assessment</h4>
+                            <p class="text-gray-500 text-sm">
+                                Comprehensive evaluation of your requirements
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="flex gap-3">
+                        <div
+                            class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-lg">
+                            ✓
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Custom Solution Proposal</h4>
+                            <p class="text-gray-500 text-sm">
+                                Tailored roadmap aligned with your goals
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="flex gap-3">
+                        <div
+                            class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-lg">
+                            ✓
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">No Obligation Required</h4>
+                            <p class="text-gray-500 text-sm">
+                                Zero commitment, just valuable insights
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Buttons -->
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                    <button
+                        class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition flex items-center gap-2">
+                        <span>📅</span> Schedule Your Consultation
+                    </button>
+                    <button
+                        class="border border-gray-300 px-6 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition flex items-center gap-2">
+                        <span>📦</span> View Services
+                    </button>
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="relative">
+
+                <!-- Floating tag -->
+                <div class="absolute -top-6 left-6 bg-green-400 text-white px-4 py-2 rounded-lg shadow-lg">
+                    <p class="text-lg font-bold leading-tight">24/7</p>
+                    <p class="text-sm opacity-90 -mt-1">Support</p>
+                </div>
+
+                <!-- Image -->
+                <img src="./network.jpg" class="rounded-xl shadow-[0_40px_70px_-20px_rgba(0,102,255,0.35)]" />
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white px-6 sm:px-10 lg:px-20 py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="./my_care_logo.svg" class="logo" alt="">
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Advancing healthcare through intelligent digital innovation. Enterprise-grade solutions for
+                        modern healthcare challenges.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Solutions</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Enterprise Software</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Mobile Applications</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Automation Systems</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Analytics Platform</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 HealthTech Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('a[href="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    // In a real implementation, this would handle navigation
+                    console.log('Navigation clicked:', this.textContent);
+                });
+            });
+
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    // Handle button actions
+                    const text = this.textContent.trim();
+                    if (text.includes('Consultation') || text.includes('Demo')) {
+                        console.log('Opening consultation form');
+                    } else if (text.includes('Solutions')) {
+                        console.log('Navigating to solutions page');
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Toggle Script -->
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Healthcare Technology Innovators</title>
+    <meta name="description" content="Learn about our mission, vision, and core principles as a healthcare-focused technology firm delivering digital innovation.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2563eb",
+                        secondary: "#1e40af",
+                        accent: "#3b82f6",
+                        dark: "#1e293b",
+                        light: "#f8fafc"
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-in-left': 'slideInLeft 0.7s ease-out',
+                        'bounce-in': 'bounceIn 0.8s ease-out'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        bounceIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.3)' },
+                            '50%': { opacity: '1', transform: 'scale(1.05)' },
+                            '70%': { transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+         .fa-rocket {
+            color: rgb(234 179 8 );
+            font-size: 5rem;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo{
+            height: 60px;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .stagger-animation > * {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+        .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+        .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Header -->
+   <header class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="container mx-auto px-6 sm:px-10 lg:px-20 py-4">
+        <div class="flex justify-between items-center">
+            
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <img src="./my_care_logo.svg" class="h-10 w-auto" alt="Logo">
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
+                <a href="service.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Service</a>
+                <a href="contact.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+            </div>
+
+            <!-- CTA + Hamburger -->
+            <div class="flex items-center space-x-4">
+                <button class="hidden md:block bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-secondary transition-colors">
+                    Request Demo
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden flex-col space-y-4 mt-4 md:hidden">
+            <a href="index.html" class="block text-gray-700 hover:text-primary font-medium">Home</a>
+            <a href="about.html" class="block text-gray-700 hover:text-primary font-medium">About</a>
+            <a href="service.html" class="block text-gray-700 hover:text-primary font-medium">Service</a>
+            <a href="contact.html" class="block text-gray-700 hover:text-primary font-medium">Contact</a>
+
+            <button class="w-full bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-secondary transition-colors">
+                Request Demo
+            </button>
+        </div>
+    </nav>
+</header>
+
+
+
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-blue-50 to-indigo-100 text-white py-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center animate-fade-in-up">
+                    <h1 class="text-4xl md:text-5xl font-bold  text-dark mb-6">About Us</h1>
+                    <p class="text-xl opacity-90 max-w-3xl  text-dark mx-auto">Leading the digital transformation in healthcare through innovative technology solutions</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who We Are Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12 animate-fade-in">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Who We Are</h2>
+                        <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                    </div>
+                    
+                    <div class="bg-blue-50 rounded-2xl p-8 md:p-12 shadow-lg animate-slide-in-left">
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                            We are a healthcare-focused technology firm delivering high-performance digital systems for organizations seeking operational excellence and innovation. Our expertise spans healthcare operations, enterprise software architecture, compliance, and user-centric design.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-cogs text-blue-600 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Healthcare Operations</h4>
+                                    <p class="text-gray-600 text-sm">Streamlining clinical workflows and administrative processes</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-laptop-code text-blue-600 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Enterprise Architecture</h4>
+                                    <p class="text-gray-600 text-sm">Scalable, secure software solutions for healthcare organizations</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-shield-alt text-blue-600 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Compliance & Security</h4>
+                                    <p class="text-gray-600 text-sm">Ensuring HIPAA compliance and data protection standards</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-user-friends text-blue-600 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">User-Centric Design</h4>
+                                    <p class="text-gray-600 text-sm">Intuitive interfaces for healthcare professionals and patients</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <!-- Mission -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover animate-fade-in-up">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-bullseye text-green-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Our Mission</h3>
+                        </div>
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            To deliver transformational digital healthcare solutions that enhance efficiency, elevate patient care, and enable sustainable growth for healthcare organizations.
+                        </p>
+                    </div>
+                    
+                    <!-- Vision -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover animate-fade-in-up" style="animation-delay: 0.2s">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-eye text-purple-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Our Vision</h3>
+                        </div>
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            To be a trusted global leader in healthcare digital innovation, shaping the future of connected, intelligent healthcare ecosystems.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Principles Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 animate-fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Core Principles</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">The foundation of everything we do</p>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto stagger-animation">
+                    <!-- Strategic Innovation -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 card-hover">
+                        <div class="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-lightbulb text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Strategic Innovation</h4>
+                        <p class="text-gray-600">Pioneering cutting-edge solutions that address complex healthcare challenges</p>
+                    </div>
+                    
+                    <!-- Clinical Precision -->
+                    <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-6 card-hover">
+                        <div class="w-14 h-14 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-stethoscope text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Clinical Precision</h4>
+                        <p class="text-gray-600">Ensuring accuracy and reliability in every aspect of healthcare technology</p>
+                    </div>
+                    
+                    <!-- Secure & Compliant Systems -->
+                    <div class="bg-gradient-to-br from-red-50 to-pink-50 rounded-xl p-6 card-hover">
+                        <div class="w-14 h-14 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-shield-alt text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Secure & Compliant Systems</h4>
+                        <p class="text-gray-600">Maintaining the highest standards of data security and regulatory compliance</p>
+                    </div>
+                    
+                    <!-- Collaborative Partnerships -->
+                    <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 card-hover">
+                        <div class="w-14 h-14 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-handshake text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Collaborative Partnerships</h4>
+                        <p class="text-gray-600">Working closely with clients to understand their unique needs and challenges</p>
+                    </div>
+                    
+                    <!-- Operational Excellence -->
+                    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-6 card-hover">
+                        <div class="w-14 h-14 bg-yellow-600 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-trophy text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Operational Excellence</h4>
+                        <p class="text-gray-600">Delivering efficient, reliable solutions that optimize healthcare operations</p>
+                    </div>
+                    
+                    <!-- Additional Principle -->
+                    <div class="bg-gradient-to-br from-teal-50 to-blue-50 rounded-xl p-6 card-hover">
+                        <div class="w-14 h-14 bg-teal-600 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Patient-Centered Design</h4>
+                        <p class="text-gray-600">Creating technology that prioritizes patient experience and outcomes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section
+        class="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#052544] to-[#0b63b8] px-6 py-16">
+        <!-- subtle dots overlay -->
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle,_rgba(255,255,255,0.02)_1px,_transparent_1px)] bg-[length:18px_18px] pointer-events-none">
+        </div>
+
+        <!-- Card -->
+        <div
+            class="relative z-10 max-w-3xl w-full rounded-2xl bg-gradient-to-br from-blue-700/90 to-blue-600/85 border border-white/10 p-10 shadow-2xl">
+            <!-- icon -->
+            <div class="flex justify-center mt-8">
+                <i class="fa-solid fa-rocket"></i>
+            </div>
+
+            <!-- Heading -->
+            <h2 class="text-center text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mt-4">
+                Ready to Modernize Your Healthcare<br class="hidden md:block" /> Technology?
+            </h2>
+
+            <!-- Description -->
+            <p class="mt-6 text-center text-blue-100 max-w-2xl mx-auto leading-relaxed">
+                Let's discuss how our enterprise-grade solutions can transform your operations, enhance patient
+                outcomes,
+                and drive strategic growth for your organization.
+            </p>
+
+            <!-- Buttons -->
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#book"
+                    class="inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold px-6 py-3 rounded-lg shadow-md">
+                    <span class="inline-block">📅</span>
+                    <span>Schedule Your Free Consultation</span>
+                </a>
+
+                <a href="#solutions"
+                    class="inline-flex items-center gap-3 bg-white/90 hover:bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg shadow-sm">
+                    <span class="inline-block">▦</span>
+                    <span>Explore All Solutions</span>
+                </a>
+            </div>
+
+            <!-- small feature bullets -->
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm text-blue-100">
+                <span class="inline-flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-green-400 inline-block"></span>
+                    No Long-term Contracts
+                </span>
+                <span class="inline-flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-green-400 inline-block"></span>
+                    Free Initial Consultation
+                </span>
+                <span class="inline-flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-green-400 inline-block"></span>
+                    Custom Solutions
+                </span>
+            </div>
+        </div>
+
+        <!-- bottom badges row (outside card)
+        <div class="absolute bottom-8 left-0 right-0 flex justify-center gap-10 text-sm text-blue-100 z-0">
+            <div class="flex items-center gap-2"><span
+                    class="inline-block w-6 h-6 bg-white/10 rounded-full grid place-items-center">✔</span> HIPAA
+                Compliant</div>
+            <div class="flex items-center gap-2"><span
+                    class="inline-block w-6 h-6 bg-white/10 rounded-full grid place-items-center">★</span> SOC 2
+                Certified</div>
+            <div class="flex items-center gap-2"><span
+                    class="inline-block w-6 h-6 bg-white/10 rounded-full grid place-items-center">🔒</span> Enterprise
+                Security</div>
+        </div> -->
+    </section>
+    </main>
+   
+  
+    <!-- Footer -->
+<footer class="bg-gray-900 text-white px-6 sm:px-10 lg:px-20 py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                           <img src="./my_care_logo.svg" class="logo" alt="">
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Advancing healthcare through intelligent digital innovation. Enterprise-grade solutions for
+                        modern healthcare challenges.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Solutions</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Enterprise Software</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Mobile Applications</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Automation Systems</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Analytics Platform</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 HealthTech Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Add intersection observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all animated elements
+            const animatedElements = document.querySelectorAll('.animate-fade-in-up, .animate-fade-in, .animate-slide-in-left, .animate-bounce-in');
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script><!-- Toggle Script -->
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+</script>
+</body>
+</html>
