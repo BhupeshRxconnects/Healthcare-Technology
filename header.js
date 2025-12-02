@@ -7,7 +7,7 @@ export function renderHeader() {
 
                 <!-- Logo -->
                 <a href="/" class="flex items-center">
-                    <img src="./my_care_logo.svg" class="h-10 w-auto" alt="Logo">
+                    <img src="./assets/my_care_logo.svg" class="h-10 w-auto" alt="Logo">
                 </a>
 
                 <!-- Desktop Menu -->
