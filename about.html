@@ -97,7 +97,11 @@
     <!-- Header -->
   <script type="module">
         import { renderHeader } from './header.js';
+        import { renderConsultationModal } from './consultationModal.js';
+        import { renderFooter } from './footer.js';
         renderHeader();
+        renderConsultationModal();
+        renderFooter();
     </script>
 
 
@@ -297,7 +301,7 @@
                     <span>Schedule Your Free Consultation</span>
                 </a>
 
-                <a href="#solutions"
+                <a href="portfolio.html"
                     class="inline-flex items-center gap-3 bg-white/90 hover:bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg shadow-sm">
                     <span class="inline-block">▦</span>
                     <span>Explore All Solutions</span>
@@ -337,57 +341,6 @@
     </main>
    
   
-    <!-- Footer -->
-<footer class="bg-gray-900 text-white px-6 sm:px-10 lg:px-20 py-10">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                           <img src="./my_care_logo.svg" class="logo" alt="">
-                    </div>
-                    <p class="text-gray-400 mb-4 max-w-md">
-                        Advancing healthcare through intelligent digital innovation. Enterprise-grade solutions for
-                        modern healthcare challenges.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-facebook text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="font-semibold text-lg mb-4">Solutions</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Enterprise Software</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Mobile Applications</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Automation Systems</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Analytics Platform</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="font-semibold text-lg mb-4">Company</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 HealthTech Solutions. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 
     <script>
         // Smooth scroll for anchor links

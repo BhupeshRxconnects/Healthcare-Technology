@@ -1,13 +1,13 @@
 // header.js
 export function renderHeader() {
     const headerHTML = `
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+<header class="sticky top-0 z-50  bg-[#e8f1ff]  backdrop-blur-md">
         <nav class="container mx-auto px-6 sm:px-10 lg:px-20 py-4">
             <div class="flex justify-between items-center">
 
                 <!-- Logo -->
                 <a href="/" class="flex items-center">
-                    <img src="./assets/my_care_logo.svg" class="h-10 w-auto" alt="Logo">
+                    <img src="./assets/my_care_logo.svg" class="h-16 w-auto" alt="Logo">
                 </a>
 
                 <!-- Desktop Menu -->
@@ -21,7 +21,7 @@ export function renderHeader() {
 
                 <!-- CTA + Hamburger -->
                 <div class="flex items-center space-x-4">
-                    <button class="hidden md:block bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-secondary transition-colors">
+                    <button id="requestDemoBtn" class="hidden md:block bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-secondary transition-colors">
                         Request Demo
                     </button>
 
@@ -45,7 +45,7 @@ export function renderHeader() {
                 <a href="portfolio.html" class="block text-gray-700 hover:text-primary font-medium">Portfolio</a>
                 <a href="contact.html" class="block text-gray-700 hover:text-primary font-medium">Contact</a>
 
-                <button class="w-full bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-secondary transition-colors">
+                <button id="requestDemoBtnMobile" class="w-full bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-secondary transition-colors">
                     Request Demo
                 </button>
 
@@ -68,6 +68,33 @@ export function renderHeader() {
     if (menuBtn) {
         menuBtn.addEventListener("click", () => {
             mobileMenu.classList.toggle("hidden");
+        });
+    }
+
+    // Request Demo button functionality - opens consultation modal
+    function openConsultationModal() {
+        const modal = document.getElementById('consultationModal');
+        if (modal) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex', 'items-center', 'justify-center');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    const requestDemoBtn = document.getElementById('requestDemoBtn');
+    const requestDemoBtnMobile = document.getElementById('requestDemoBtnMobile');
+
+    if (requestDemoBtn) {
+        requestDemoBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openConsultationModal();
+        });
+    }
+
+    if (requestDemoBtnMobile) {
+        requestDemoBtnMobile.addEventListener('click', function(e) {
+            e.preventDefault();
+            openConsultationModal();
         });
     }
 }
