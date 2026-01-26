@@ -9,7 +9,7 @@ export function renderFooter() {
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="md:col-span-2">
                     <div class="flex items-center space-x-2 mb-4">
-                        <img src="./assets/my_care_logo.svg" class="logo" alt="">
+                        <img src="./assets/logo.png" class="logo" alt="">
                     </div>
                     <p class="text-black-400 mb-4 max-w-md">
                         Advancing healthcare through intelligent digital innovation. Enterprise-grade solutions for

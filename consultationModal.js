@@ -58,7 +58,7 @@ export function renderConsultationModal() {
 
                 <!-- Submit Button -->
                 <button type="submit"
-                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
+                    class="w-full bg-[rgb(1,152,218)] hover:bg-[rgb(1,132,198)] text-white font-semibold py-3 rounded-lg transition shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
                     <span id="submitText">Submit Request</span>
                     <span id="submitLoader" class="hidden">
                         <i class="fas fa-spinner fa-spin mr-2"></i>Submitting...
