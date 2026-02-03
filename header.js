@@ -6,7 +6,7 @@ export function renderHeader() {
             <div class="flex justify-between items-center">
 
                 <!-- Logo -->
-                <a href="/" class="flex items-center">
+                <a href="index.html" class="flex items-center">
                     <img src="./assets/logo.png" class="h-16 w-auto" alt="Logo">
                 </a>
 
