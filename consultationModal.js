@@ -3,7 +3,7 @@ export function renderConsultationModal() {
     const modalHTML = `
     <!-- Consultation Modal -->
     <div id="consultationModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden px-4">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative max-h-[90vh] overflow-y-auto">
+        <div class="bg-white rounded-2xl shadow-2xl w-full md:w-[70%] p-8 relative max-h-[90vh] overflow-y-auto">
             <!-- Close Button -->
             <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
                 <i class="fas fa-times text-2xl"></i>
@@ -39,6 +39,63 @@ export function renderConsultationModal() {
                     <input type="tel" id="consultantPhone" name="phone" required
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
                         placeholder="+1 (555) 123-4567">
+                </div>
+
+                <div>
+                    <label for="consultantCountry" class="block text-sm font-medium text-gray-700 mb-2">Country *</label>
+                    <select id="consultantCountry" name="country" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition">
+                        <option value="">Select country...</option>
+                        <option value="United States">United States</option>
+                        <option value="Canada">Canada</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Australia">Australia</option>
+                        <option value="India">India</option>
+                        <option value="Germany">Germany</option>
+                        <option value="France">France</option>
+                        <option value="Japan">Japan</option>
+                        <option value="China">China</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="United Arab Emirates">United Arab Emirates</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="consultantTimezone" class="block text-sm font-medium text-gray-700 mb-2">Timezone *</label>
+                    <select id="consultantTimezone" name="timezone" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition">
+                        <option value="">Select timezone...</option>
+                        <option value="UTC-12:00">UTC-12:00 (Baker Island Time)</option>
+                        <option value="UTC-11:00">UTC-11:00 (Hawaii-Aleutian Time)</option>
+                        <option value="UTC-10:00">UTC-10:00 (Hawaii Time)</option>
+                        <option value="UTC-09:00">UTC-09:00 (Alaska Time)</option>
+                        <option value="UTC-08:00">UTC-08:00 (Pacific Time)</option>
+                        <option value="UTC-07:00">UTC-07:00 (Mountain Time)</option>
+                        <option value="UTC-06:00">UTC-06:00 (Central Time)</option>
+                        <option value="UTC-05:00">UTC-05:00 (Eastern Time)</option>
+                        <option value="UTC-04:00">UTC-04:00 (Atlantic Time)</option>
+                        <option value="UTC-03:00">UTC-03:00 (Argentina Time)</option>
+                        <option value="UTC-02:00">UTC-02:00 (Mid-Atlantic Time)</option>
+                        <option value="UTC-01:00">UTC-01:00 (Azores Time)</option>
+                        <option value="UTC+00:00">UTC+00:00 (Greenwich Mean Time)</option>
+                        <option value="UTC+01:00">UTC+01:00 (Central European Time)</option>
+                        <option value="UTC+02:00">UTC+02:00 (Eastern European Time)</option>
+                        <option value="UTC+03:00">UTC+03:00 (Moscow Time)</option>
+                        <option value="UTC+04:00">UTC+04:00 (Gulf Standard Time)</option>
+                        <option value="UTC+05:00">UTC+05:00 (Pakistan Standard Time)</option>
+                        <option value="UTC+05:30">UTC+05:30 (India Standard Time)</option>
+                        <option value="UTC+06:00">UTC+06:00 (Bangladesh Time)</option>
+                        <option value="UTC+07:00">UTC+07:00 (Indochina Time)</option>
+                        <option value="UTC+08:00">UTC+08:00 (China Standard Time)</option>
+                        <option value="UTC+09:00">UTC+09:00 (Japan Standard Time)</option>
+                        <option value="UTC+10:00">UTC+10:00 (Australian Eastern Time)</option>
+                        <option value="UTC+11:00">UTC+11:00 (Solomon Islands Time)</option>
+                        <option value="UTC+12:00">UTC+12:00 (New Zealand Time)</option>
+                    </select>
                 </div>
 
                 <div>
@@ -149,6 +206,8 @@ function initConsultationModal() {
                 name: document.getElementById('consultantName').value,
                 email: document.getElementById('consultantEmail').value,
                 phone: document.getElementById('consultantPhone').value,
+                country: document.getElementById('consultantCountry').value,
+                timezone: document.getElementById('consultantTimezone').value,
                 availability: document.getElementById('consultantAvailability').value
             };
 
