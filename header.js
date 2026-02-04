@@ -21,7 +21,7 @@ export function renderHeader() {
 
                 <!-- CTA + Hamburger -->
                 <div class="flex items-center space-x-4">
-                    <button id="requestDemoBtn" class="hidden md:block bg-[rgb(1,152,218)] text-white px-6 py-2 rounded-lg font-medium hover:bg-[rgb(1,132,198)] transition-colors">
+                    <button id="requestDemoBtn" class="hidden md:block bg-[rgb(1,122,188)] text-white px-6 py-2 rounded-lg font-medium hover:bg-[rgb(1,132,198)] transition-colors">
                         Request Demo
                     </button>
 
@@ -45,7 +45,7 @@ export function renderHeader() {
                 <a href="portfolio.html" class="block text-gray-700 hover:text-primary font-medium">Portfolio</a>
                 <a href="contact.html" class="block text-gray-700 hover:text-primary font-medium">Contact</a>
 
-                <button id="requestDemoBtnMobile" class="w-full bg-[rgb(1,152,218)] text-white px-6 py-2 rounded-lg font-medium hover:bg-[rgb(1,132,198)] transition-colors">
+                <button id="requestDemoBtnMobile" class="w-full text-[#1671b9] text-white px-6 py-2 rounded-lg font-medium hover:bg-[rgb(1,132,198)] transition-colors">
                     Request Demo
                 </button>
 

@@ -12,7 +12,7 @@ export function renderConsultationModal() {
             <!-- Modal Header -->
             <div class="text-center mb-6">
                 <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-calendar-check text-blue-600 text-2xl"></i>
+                    <i class="fas fa-calendar-check text-[#1671b9] text-2xl"></i>
                 </div>
                 <h2 class="text-2xl font-bold text-gray-900 mb-2">Request a Consultation</h2>
                 <p class="text-gray-600">Fill out the form below and we'll get back to you soon</p>
@@ -58,7 +58,7 @@ export function renderConsultationModal() {
 
                 <!-- Submit Button -->
                 <button type="submit"
-                    class="w-full bg-[rgb(1,152,218)] hover:bg-[rgb(1,132,198)] text-white font-semibold py-3 rounded-lg transition shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
+                    class="w-full bg-[rgb(1,122,188)] hover:bg-[rgb(1,132,198)] text-white font-semibold py-3 rounded-lg transition shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
                     <span id="submitText">Submit Request</span>
                     <span id="submitLoader" class="hidden">
                         <i class="fas fa-spinner fa-spin mr-2"></i>Submitting...
