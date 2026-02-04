@@ -1,16 +1,13 @@
-// header.js
 export function renderHeader() {
     const headerHTML = `
 <header class="sticky top-0 z-50  bg-[#e8f1ff]  backdrop-blur-md">
         <nav class="container mx-auto px-6 sm:px-10 lg:px-20 py-4">
             <div class="flex justify-between items-center">
 
-                <!-- Logo -->
                 <a href="index.html" class="flex items-center">
                     <img src="./assets/logo.png" class="h-16 w-auto" alt="Logo">
                 </a>
 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8">
                     <a href="index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
                     <a href="about.html" class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
@@ -19,7 +16,6 @@ export function renderHeader() {
                     <a href="contact.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
                 </div>
 
-                <!-- CTA + Hamburger -->
                 <div class="flex items-center space-x-4">
                     <button id="requestDemoBtn" class="hidden md:block bg-[rgb(1,122,188)] text-white px-6 py-2 rounded-lg font-medium hover:bg-[rgb(1,132,198)] transition-colors">
                         Request Demo
@@ -30,14 +26,12 @@ export function renderHeader() {
                         Partners
                     </a>
 
-                    <!-- Mobile Menu Button -->
                     <button id="menuBtn" class="md:hidden text-gray-700">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Mobile Menu -->
             <div id="mobileMenu" class="hidden flex-col space-y-4 mt-4 md:hidden">
                 <a href="index.html" class="block text-gray-700 hover:text-primary font-medium">Home</a>
                 <a href="about.html" class="block text-gray-700 hover:text-primary font-medium">About</a>
@@ -61,7 +55,6 @@ export function renderHeader() {
 
     document.body.insertAdjacentHTML("afterbegin", headerHTML);
 
-    // Mobile Menu Toggle
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
 
@@ -71,7 +64,6 @@ export function renderHeader() {
         });
     }
 
-    // Request Demo button functionality - opens consultation modal
     function openConsultationModal() {
         const modal = document.getElementById('consultationModal');
         if (modal) {

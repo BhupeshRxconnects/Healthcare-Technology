@@ -1,7 +1,5 @@
-// footer.js
 export function renderFooter() {
     const footerHTML = `
-    <!-- Footer -->
     <footer class="bg-[#e8f1ff]  text-black-90 px-6 sm:px-10 lg:px-20 py-10">
                 <div class="border-t border-gray-800 mt-8 pt-8 text-center text-black-400">
 </div>

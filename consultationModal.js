@@ -1,15 +1,11 @@
-// consultationModal.js
 export function renderConsultationModal() {
     const modalHTML = `
-    <!-- Consultation Modal -->
     <div id="consultationModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden px-4">
-        <div class="bg-white rounded-2xl shadow-2xl w-full md:w-[70%] p-8 relative max-h-[90vh] overflow-y-auto">
-            <!-- Close Button -->
+        <div class="bg-white rounded-2xl shadow-2xl max-w-[70%] w-full p-8 relative max-h-[90vh] overflow-y-auto">
             <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
                 <i class="fas fa-times text-2xl"></i>
             </button>
 
-            <!-- Modal Header -->
             <div class="text-center mb-6">
                 <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <i class="fas fa-calendar-check text-[#1671b9] text-2xl"></i>
@@ -18,7 +14,6 @@ export function renderConsultationModal() {
                 <p class="text-gray-600">Fill out the form below and we'll get back to you soon</p>
             </div>
 
-            <!-- Modal Form -->
             <form id="consultationForm" class="space-y-4">
                 <div>
                     <label for="consultantName" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
@@ -71,30 +66,42 @@ export function renderConsultationModal() {
                         <option value="">Select timezone...</option>
                         <option value="UTC-12:00">UTC-12:00 (Baker Island Time)</option>
                         <option value="UTC-11:00">UTC-11:00 (Hawaii-Aleutian Time)</option>
-                        <option value="UTC-10:00">UTC-10:00 (Hawaii Time)</option>
+                        <option value="UTC-10:00">UTC-10:00 (Hawaii Standard Time)</option>
+                        <option value="UTC-09:30">UTC-09:30 (Marquesas Time)</option>
                         <option value="UTC-09:00">UTC-09:00 (Alaska Time)</option>
-                        <option value="UTC-08:00">UTC-08:00 (Pacific Time)</option>
-                        <option value="UTC-07:00">UTC-07:00 (Mountain Time)</option>
-                        <option value="UTC-06:00">UTC-06:00 (Central Time)</option>
-                        <option value="UTC-05:00">UTC-05:00 (Eastern Time)</option>
-                        <option value="UTC-04:00">UTC-04:00 (Atlantic Time)</option>
-                        <option value="UTC-03:00">UTC-03:00 (Argentina Time)</option>
+                        <option value="UTC-08:00">UTC-08:00 (Pacific Time - US & Canada)</option>
+                        <option value="UTC-07:00">UTC-07:00 (Mountain Time - US & Canada)</option>
+                        <option value="UTC-06:00">UTC-06:00 (Central Time - US & Canada)</option>
+                        <option value="UTC-05:00">UTC-05:00 (Eastern Time - US & Canada)</option>
+                        <option value="UTC-04:00">UTC-04:00 (Atlantic Time - Canada)</option>
+                        <option value="UTC-03:30">UTC-03:30 (Newfoundland Time)</option>
+                        <option value="UTC-03:00">UTC-03:00 (Argentina, Brazil)</option>
                         <option value="UTC-02:00">UTC-02:00 (Mid-Atlantic Time)</option>
-                        <option value="UTC-01:00">UTC-01:00 (Azores Time)</option>
+                        <option value="UTC-01:00">UTC-01:00 (Cape Verde Time)</option>
                         <option value="UTC+00:00">UTC+00:00 (Greenwich Mean Time)</option>
                         <option value="UTC+01:00">UTC+01:00 (Central European Time)</option>
                         <option value="UTC+02:00">UTC+02:00 (Eastern European Time)</option>
-                        <option value="UTC+03:00">UTC+03:00 (Moscow Time)</option>
+                        <option value="UTC+03:00">UTC+03:00 (Moscow Time, East Africa Time)</option>
+                        <option value="UTC+03:30">UTC+03:30 (Iran Standard Time)</option>
                         <option value="UTC+04:00">UTC+04:00 (Gulf Standard Time)</option>
+                        <option value="UTC+04:30">UTC+04:30 (Afghanistan Time)</option>
                         <option value="UTC+05:00">UTC+05:00 (Pakistan Standard Time)</option>
                         <option value="UTC+05:30">UTC+05:30 (India Standard Time)</option>
-                        <option value="UTC+06:00">UTC+06:00 (Bangladesh Time)</option>
+                        <option value="UTC+05:45">UTC+05:45 (Nepal Time)</option>
+                        <option value="UTC+06:00">UTC+06:00 (Bangladesh Standard Time)</option>
+                        <option value="UTC+06:30">UTC+06:30 (Myanmar Time)</option>
                         <option value="UTC+07:00">UTC+07:00 (Indochina Time)</option>
-                        <option value="UTC+08:00">UTC+08:00 (China Standard Time)</option>
-                        <option value="UTC+09:00">UTC+09:00 (Japan Standard Time)</option>
-                        <option value="UTC+10:00">UTC+10:00 (Australian Eastern Time)</option>
+                        <option value="UTC+08:00">UTC+08:00 (China Standard Time, Singapore)</option>
+                        <option value="UTC+08:45">UTC+08:45 (Australian Central Western Time)</option>
+                        <option value="UTC+09:00">UTC+09:00 (Japan Standard Time, Korea Standard Time)</option>
+                        <option value="UTC+09:30">UTC+09:30 (Australian Central Standard Time)</option>
+                        <option value="UTC+10:00">UTC+10:00 (Australian Eastern Standard Time)</option>
+                        <option value="UTC+10:30">UTC+10:30 (Lord Howe Standard Time)</option>
                         <option value="UTC+11:00">UTC+11:00 (Solomon Islands Time)</option>
-                        <option value="UTC+12:00">UTC+12:00 (New Zealand Time)</option>
+                        <option value="UTC+12:00">UTC+12:00 (New Zealand Standard Time)</option>
+                        <option value="UTC+12:45">UTC+12:45 (Chatham Standard Time)</option>
+                        <option value="UTC+13:00">UTC+13:00 (Tonga Time)</option>
+                        <option value="UTC+14:00">UTC+14:00 (Line Islands Time)</option>
                     </select>
                 </div>
 
@@ -110,10 +117,8 @@ export function renderConsultationModal() {
                     </select>
                 </div>
 
-                <!-- Success/Error Messages -->
                 <div id="formMessage" class="hidden p-4 rounded-lg"></div>
 
-                <!-- Submit Button -->
                 <button type="submit"
                     class="w-full bg-[rgb(1,122,188)] hover:bg-[rgb(1,132,198)] text-white font-semibold py-3 rounded-lg transition shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
                     <span id="submitText">Submit Request</span>
@@ -126,10 +131,7 @@ export function renderConsultationModal() {
     </div>
     `;
 
-    // Insert modal HTML before closing body tag
     document.body.insertAdjacentHTML('beforeend', modalHTML);
-
-    // Initialize modal functionality
     initConsultationModal();
 }
 
@@ -141,24 +143,20 @@ function initConsultationModal() {
     const submitText = document.getElementById('submitText');
     const submitLoader = document.getElementById('submitLoader');
 
-    // Open modal function
     function openModal() {
         modal.classList.remove('hidden');
         modal.classList.add('flex', 'items-center', 'justify-center');
         document.body.style.overflow = 'hidden';
-        // Reset form
         consultationForm.reset();
         formMessage.classList.add('hidden');
     }
 
-    // Close modal function
     function closeModal() {
         modal.classList.add('hidden');
         modal.classList.remove('flex', 'items-center', 'justify-center');
         document.body.style.overflow = '';
     }
 
-    // Event delegation for opening modal - all consultation buttons/links
     document.addEventListener('click', function(e) {
         const element = e.target.closest('a, button');
         if (element) {
@@ -170,12 +168,10 @@ function initConsultationModal() {
         }
     });
 
-    // Close modal on close button click
     if (closeModalBtn) {
         closeModalBtn.addEventListener('click', closeModal);
     }
 
-    // Close modal on backdrop click
     if (modal) {
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
@@ -184,14 +180,12 @@ function initConsultationModal() {
         });
     }
 
-    // Close modal on Escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
             closeModal();
         }
     });
 
-    // Form submission
     if (consultationForm) {
         consultationForm.addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -228,7 +222,6 @@ function initConsultationModal() {
                     formMessage.classList.remove('hidden');
                     consultationForm.reset();
 
-                    // Auto close modal after 3 seconds
                     setTimeout(() => {
                         closeModal();
                     }, 3000);
