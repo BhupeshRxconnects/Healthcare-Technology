@@ -31,6 +31,12 @@
         }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        window.onRecaptchaLoad = function() {
+            console.log('reCAPTCHA loaded');
+        };
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
     <style>
         .main-img {
             border-radius: 1rem;

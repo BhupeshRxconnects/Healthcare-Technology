@@ -64,17 +64,26 @@ export function renderHeader() {
         });
     }
 
-    function openConsultationModal() {
-        const modal = document.getElementById('consultationModal');
-        if (modal) {
-            modal.classList.remove('hidden');
-            modal.classList.add('flex', 'items-center', 'justify-center');
-            document.body.style.overflow = 'hidden';
-        }
-    }
-
     const requestDemoBtn = document.getElementById('requestDemoBtn');
     const requestDemoBtnMobile = document.getElementById('requestDemoBtnMobile');
+
+    function openConsultationModal() {
+        // Use the global function from consultationModal.js if available
+        if (typeof window.openConsultationModal === 'function') {
+            window.openConsultationModal();
+        } else {
+            // Fallback: wait for consultationModal to be loaded
+            const checkInterval = setInterval(() => {
+                if (typeof window.openConsultationModal === 'function') {
+                    window.openConsultationModal();
+                    clearInterval(checkInterval);
+                }
+            }, 100);
+            
+            // Stop checking after 3 seconds
+            setTimeout(() => clearInterval(checkInterval), 3000);
+        }
+    }
 
     if (requestDemoBtn) {
         requestDemoBtn.addEventListener('click', function(e) {

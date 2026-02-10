@@ -16,7 +16,7 @@ export function renderConsultationModal() {
 
             <form id="consultationForm" class="space-y-4">
                 <div>
-                    <label for="consultantName" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                    <label for="consultantName" class="block text-sm font-medium text-gray-700 mb-2">Full me *</label>
                     <input type="text" id="consultantName" name="name" required
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
                         placeholder="John Doe">
@@ -117,6 +117,10 @@ export function renderConsultationModal() {
                     </select>
                 </div>
 
+                <div class="flex justify-center my-4">
+                    <div id="recaptcha-container"></div>
+                </div>
+
                 <div id="formMessage" class="hidden p-4 rounded-lg"></div>
 
                 <button type="submit"
@@ -133,6 +137,82 @@ export function renderConsultationModal() {
 
     document.body.insertAdjacentHTML('beforeend', modalHTML);
     initConsultationModal();
+    
+    // Expose openModal function globally so header.js and other scripts can use it
+    window.openConsultationModal = function() {
+        const modal = document.getElementById('consultationModal');
+        const consultationForm = document.getElementById('consultationForm');
+        const formMessage = document.getElementById('formMessage');
+        
+        if (modal) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex', 'items-center', 'justify-center');
+            document.body.style.overflow = 'hidden';
+            
+            if (consultationForm) consultationForm.reset();
+            if (formMessage) formMessage.classList.add('hidden');
+            
+            // Render or reset reCAPTCHA when modal opens
+            const recaptchaContainer = document.getElementById('recaptcha-container');
+            if (recaptchaContainer) {
+                // Clear any existing CAPTCHA
+                recaptchaContainer.innerHTML = '';
+                
+                // Wait a bit for the modal to be fully visible, then render CAPTCHA
+                setTimeout(() => {
+                    const renderCaptcha = () => {
+                        if (typeof grecaptcha !== 'undefined' && grecaptcha.render) {
+                            try {
+                                const widgetId = grecaptcha.render('recaptcha-container', {
+                                    'sitekey': '6Le_7mYsAAAAAIu6ZjQ_2nugpTbkIfdQ0O6RBcfq',
+                                    'theme': 'light',
+                                    'size': 'normal'
+                                });
+                                // Store widget ID globally so form submission can access it
+                                window.recaptchaWidgetId = widgetId;
+                                if (recaptchaContainer) {
+                                    recaptchaContainer.setAttribute('data-widget-id', widgetId);
+                                }
+                            } catch (error) {
+                                console.error('reCAPTCHA render error:', error);
+                                // If render fails, try using the data attribute method
+                                const container = document.getElementById('recaptcha-container');
+                                if (container) {
+                                    container.innerHTML = '<div class="g-recaptcha" data-sitekey="6Le_7mYsAAAAAIu6ZjQ_2nugpTbkIfdQ0O6RBcfq"></div>';
+                                    if (grecaptcha.ready) {
+                                    grecaptcha.ready(() => {
+                                        const widgetId = grecaptcha.render(container.querySelector('.g-recaptcha'), {
+                                            'sitekey': '6Le_7mYsAAAAAIu6ZjQ_2nugpTbkIfdQ0O6RBcfq'
+                                        });
+                                        window.recaptchaWidgetId = widgetId;
+                                        if (container) {
+                                            container.setAttribute('data-widget-id', widgetId);
+                                        }
+                                    });
+                                    }
+                                }
+                            }
+                        }
+                    };
+                    
+                    if (typeof grecaptcha !== 'undefined' && grecaptcha.render) {
+                        renderCaptcha();
+                    } else {
+                        // If grecaptcha is not loaded yet, wait and try again
+                        const checkInterval = setInterval(() => {
+                            if (typeof grecaptcha !== 'undefined' && grecaptcha.render) {
+                                renderCaptcha();
+                                clearInterval(checkInterval);
+                            }
+                        }, 100);
+                        
+                        // Stop checking after 5 seconds
+                        setTimeout(() => clearInterval(checkInterval), 5000);
+                    }
+                }, 100);
+            }
+        }
+    };
 }
 
 function initConsultationModal() {
@@ -142,6 +222,10 @@ function initConsultationModal() {
     const formMessage = document.getElementById('formMessage');
     const submitText = document.getElementById('submitText');
     const submitLoader = document.getElementById('submitLoader');
+    let recaptchaWidgetId = null;
+    
+    // Store widget ID globally so it can be accessed from anywhere
+    window.recaptchaWidgetId = null;
 
     function openModal() {
         modal.classList.remove('hidden');
@@ -149,12 +233,71 @@ function initConsultationModal() {
         document.body.style.overflow = 'hidden';
         consultationForm.reset();
         formMessage.classList.add('hidden');
+        
+        // Render or reset reCAPTCHA when modal opens
+        const recaptchaContainer = document.getElementById('recaptcha-container');
+        if (recaptchaContainer) {
+            // Clear any existing CAPTCHA
+            recaptchaContainer.innerHTML = '';
+            
+            // Wait a bit for the modal to be fully visible, then render CAPTCHA
+            setTimeout(() => {
+                const renderCaptcha = () => {
+                    if (typeof grecaptcha !== 'undefined' && grecaptcha.render) {
+                        try {
+                            recaptchaWidgetId = grecaptcha.render('recaptcha-container', {
+                                'sitekey': '6Le_7mYsAAAAAIu6ZjQ_2nugpTbkIfdQ0O6RBcfq',
+                                'theme': 'light',
+                                'size': 'normal'
+                            });
+                            window.recaptchaWidgetId = recaptchaWidgetId;
+                        } catch (error) {
+                            console.error('reCAPTCHA render error:', error);
+                            // If render fails, try using the data attribute method
+                            const container = document.getElementById('recaptcha-container');
+                            if (container) {
+                                container.innerHTML = '<div class="g-recaptcha" data-sitekey="6Le_7mYsAAAAAIu6ZjQ_2nugpTbkIfdQ0O6RBcfq"></div>';
+                                if (grecaptcha.ready) {
+                                    grecaptcha.ready(() => {
+                                        recaptchaWidgetId = grecaptcha.render(container.querySelector('.g-recaptcha'), {
+                                            'sitekey': '6Le_7mYsAAAAAIu6ZjQ_2nugpTbkIfdQ0O6RBcfq'
+                                        });
+                                    });
+                                }
+                            }
+                        }
+                    }
+                };
+                
+                if (typeof grecaptcha !== 'undefined' && grecaptcha.render) {
+                    renderCaptcha();
+                } else {
+                    // If grecaptcha is not loaded yet, wait and try again
+                    const checkInterval = setInterval(() => {
+                        if (typeof grecaptcha !== 'undefined' && grecaptcha.render) {
+                            renderCaptcha();
+                            clearInterval(checkInterval);
+                        }
+                    }, 100);
+                    
+                    // Stop checking after 5 seconds
+                    setTimeout(() => clearInterval(checkInterval), 5000);
+                }
+            }, 100);
+        }
     }
 
     function closeModal() {
         modal.classList.add('hidden');
         modal.classList.remove('flex', 'items-center', 'justify-center');
         document.body.style.overflow = '';
+        // Clear CAPTCHA container when modal closes
+        const recaptchaContainer = document.getElementById('recaptcha-container');
+        if (recaptchaContainer) {
+            recaptchaContainer.innerHTML = '';
+        }
+        recaptchaWidgetId = null;
+        window.recaptchaWidgetId = null;
     }
 
     document.addEventListener('click', function(e) {
@@ -196,13 +339,37 @@ function initConsultationModal() {
             submitLoader.classList.remove('hidden');
             formMessage.classList.add('hidden');
 
+            // Get reCAPTCHA response
+            let recaptchaResponse = '';
+            if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse) {
+                // Try to get widget ID from local variable or global variable
+                const widgetId = recaptchaWidgetId !== null ? recaptchaWidgetId : (window.recaptchaWidgetId !== null ? window.recaptchaWidgetId : null);
+                if (widgetId !== null) {
+                    recaptchaResponse = grecaptcha.getResponse(widgetId);
+                } else {
+                    // Fallback: try to get response without widget ID
+                    recaptchaResponse = grecaptcha.getResponse();
+                }
+            }
+            
+            if (!recaptchaResponse) {
+                formMessage.className = 'p-4 rounded-lg bg-red-100 text-red-800 border border-red-300';
+                formMessage.textContent = 'Please complete the CAPTCHA verification.';
+                formMessage.classList.remove('hidden');
+                submitButton.disabled = false;
+                submitText.classList.remove('hidden');
+                submitLoader.classList.add('hidden');
+                return;
+            }
+
             const formData = {
                 name: document.getElementById('consultantName').value,
                 email: document.getElementById('consultantEmail').value,
                 phone: document.getElementById('consultantPhone').value,
                 country: document.getElementById('consultantCountry').value,
                 timezone: document.getElementById('consultantTimezone').value,
-                availability: document.getElementById('consultantAvailability').value
+                availability: document.getElementById('consultantAvailability').value,
+                recaptcha_response: recaptchaResponse
             };
 
             try {
@@ -221,6 +388,10 @@ function initConsultationModal() {
                     formMessage.textContent = result.message || 'Thank you! We\'ll get back to you soon.';
                     formMessage.classList.remove('hidden');
                     consultationForm.reset();
+                    const widgetIdToReset = recaptchaWidgetId !== null ? recaptchaWidgetId : (window.recaptchaWidgetId !== null ? window.recaptchaWidgetId : null);
+                    if (typeof grecaptcha !== 'undefined' && grecaptcha.reset && widgetIdToReset !== null) {
+                        grecaptcha.reset(widgetIdToReset);
+                    }
 
                     setTimeout(() => {
                         closeModal();
@@ -229,11 +400,19 @@ function initConsultationModal() {
                     formMessage.className = 'p-4 rounded-lg bg-red-100 text-red-800 border border-red-300';
                     formMessage.textContent = result.message || 'Something went wrong. Please try again.';
                     formMessage.classList.remove('hidden');
+                    const widgetIdToReset = recaptchaWidgetId !== null ? recaptchaWidgetId : (window.recaptchaWidgetId !== null ? window.recaptchaWidgetId : null);
+                    if (typeof grecaptcha !== 'undefined' && grecaptcha.reset && widgetIdToReset !== null) {
+                        grecaptcha.reset(widgetIdToReset);
+                    }
                 }
             } catch (error) {
                 formMessage.className = 'p-4 rounded-lg bg-red-100 text-red-800 border border-red-300';
                 formMessage.textContent = 'Network error. Please check your connection and try again.';
                 formMessage.classList.remove('hidden');
+                const widgetIdToReset = recaptchaWidgetId !== null ? recaptchaWidgetId : (window.recaptchaWidgetId !== null ? window.recaptchaWidgetId : null);
+                if (typeof grecaptcha !== 'undefined' && grecaptcha.reset && widgetIdToReset !== null) {
+                    grecaptcha.reset(widgetIdToReset);
+                }
                 console.error('Error:', error);
             } finally {
                 submitButton.disabled = false;

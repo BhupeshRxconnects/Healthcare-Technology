@@ -32,6 +32,13 @@
         }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Global callback for reCAPTCHA
+        window.onRecaptchaLoad = function() {
+            console.log('reCAPTCHA loaded');
+        };
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
     <style>
         .main-img {
             border-radius: 1rem;
@@ -83,23 +90,21 @@
                 </div>
 
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-                    Transform Healthcare Operations with
-                    <span class="text-brand">Intelligent Technology</span>
+                    Advancing Healthcare Through Intelligent Digital Innovation
                 </h1>
 
                 <p class="text-gray-600 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
-                    Get measurable improvements in efficiency, compliance, and patient outcomes through secure, scalable
-                    digital solutions—without disrupting your existing workflows.
+                    Enterprise-grade software, applications, and technology solutions delivering operational excellence, data-driven insights, and enhanced patient outcomes.
                 </p>
 
                 <div class="flex flex-wrap gap-4 mb-6">
                     <a href="#"
                         class="bg-[rgb(1,122,188)] hover:bg-[rgb(1,132,198)] text-white px-6 py-3 rounded-lg font-semibold shadow-md">
-                        Request Your Free Consultation
+                        Request a Consultation
                     </a>
                     <a href="portfolio.html"
                         class="bg-white border hover:bg-gray-50 px-6 py-3 rounded-lg font-semibold text-gray-800 shadow-sm">
-                        Explore Our Solutions
+                        View Our Solutions
                     </a>
                 </div>
 
@@ -136,45 +141,7 @@
 
         </div>
     </section>
-
-    <section class="py-16 bg-white">
-        <div class="container main mx-auto px-4">
-            <div class="max-w-4xl mx-auto ">
-                <h1 class="text-4xl md:text-6xl font-bold text-dark mb-6 leading-tight">
-                    Advancing Healthcare Through Intelligent Digital Innovation
-                </h1>
-                <p class="text-xl text-gray-700 mb-8 leading-relaxed">
-                    Enterprise-grade software, applications, and technology solutions delivering operational excellence,
-                    data-driven insights, and enhanced patient outcomes.
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-start mb-12">
-                    <button
-                        class="bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-secondary transition-colors shadow-lg">
-                        Request a Consultation
-                    </button>
-                    <button
-                        class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary hover:text-white transition-colors">
-                        View Our Solutions
-                    </button>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-xl p-8 max-w-3xl mx-auto">
-                    <h2 class="text-2xl font-bold text-dark mb-6 text-left">Introduction</h2>
-                    <p class="text-gray-700 text-lg leading-relaxed text-left">
-                        We are a corporate-grade digital technology partner specializing in healthcare software
-                        development. Our focus is on delivering secure, scalable, and future-ready solutions that
-                        modernize healthcare systems, improve clinical efficiency, and support strategic growth. By
-                        combining healthcare expertise with modern innovation, we empower organizations to operate with
-                        precision, confidence, and agility.
-                    </p>
-                </div>
-            </div>
-            <div>
-                <img src="./public.jpg" class="main-img" alt="">
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Key Capabilities Section -->
     <section class="py-16 bg-white">
